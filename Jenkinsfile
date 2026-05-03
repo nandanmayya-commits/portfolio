@@ -3,21 +3,9 @@ pipeline {
 
     stages {
 
-        stage('Checkout') {
-            steps {
-                git 'https://github.com/nandanmayya-commits/portfolio.git'
-            }
-        }
-
-        stage('Build with Maven') {
+        stage('Build') {
             steps {
                 bat 'mvn clean package'
-            }
-        }
-
-        stage('Test') {
-            steps {
-                bat 'mvn test'
             }
         }
 
